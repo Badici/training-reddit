@@ -6,10 +6,10 @@ function callStartupFunctions() {
 }
 
 function addElements() {
-    let header = document.createElement("h1");
+    const header = document.createElement("h1");
     header.textContent = "Reddit top posts";
 
-    let listings = document.createElement("div");
+    const listings = document.createElement("div");
     listings.setAttribute("id", "listings-div")
     listings.innerHTML = '<input type="text" placeholder="Search for a Subreddit..." id="search-bar" onchange="makeRequest(this.value)">';
 
@@ -32,7 +32,7 @@ async function refreshLisitings(responseAsJson) {
 
         listItem.innerHTML = '<p>Author: ' + responseAsJson[i].data.author + '</p> <br>' +
             '<p>' + responseAsJson[i].data.title + ':</p> <br>' +
-            '<img src="' + responseAsJson[i].data.thumbnail + '" id="' + i + '" alt="" onclick="markAsFavorite(this.id)">';
+            '<img src="' + responseAsJson[i].data.thumbnail + '" id="' + i + '" alt="" class="postImg" onclick="markAsFavorite(this.id)">';
         document.getElementById('items-list').appendChild(listItem);
 
     }
@@ -59,7 +59,8 @@ function makeRequest(subreddit) {
 }
 
 function markAsFavorite(imgId) {
-    let images = document.querySelectorAll('img');
+    let images = document.querySelectorAll('.postImg');
+    console.log(images);
     images.forEach(img => {
         img.classList.remove("favorite");
         if (img.id === imgId) {
