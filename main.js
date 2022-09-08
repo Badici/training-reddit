@@ -39,6 +39,7 @@ async function refreshLisitings(responseAsJson) {
 
 
 }
+//test
 
 function makeRequest(subreddit) {
     console.log("entered request function");
