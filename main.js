@@ -39,7 +39,7 @@ async function refreshLisitings(responseAsJson) {
 
 
 }
-
+//for merge
 function makeRequest(subreddit) {
     console.log("entered request function");
     let request = new XMLHttpRequest();
