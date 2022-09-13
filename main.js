@@ -51,6 +51,8 @@ function makeRequest(subreddit) {
             responseAsJson = JSON.parse(request.response).data.children;
             console.log("Succesful request");
             console.log(responseAsJson);
+            // const list = document.getElementById('items-list');
+            // list.innerHTML = '';
         } else {
             console.log('error ${request.status} ${request.statusText}')
         }
